@@ -1,0 +1,15 @@
+-- CreateTable
+CREATE TABLE "Teacher" (
+    "id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    "teacherName" TEXT NOT NULL,
+    "teacherNRC" TEXT NOT NULL,
+    "position" TEXT NOT NULL,
+    "status" TEXT NOT NULL,
+    "lcID" INTEGER NOT NULL,
+    "address" TEXT NOT NULL,
+    "phnumber" TEXT NOT NULL,
+    "joinDate" DATETIME NOT NULL,
+    "createdOn" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "modifiedOn" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT "Teacher_lcID_fkey" FOREIGN KEY ("lcID") REFERENCES "LearningCenter" ("id") ON DELETE RESTRICT ON UPDATE CASCADE
+);
