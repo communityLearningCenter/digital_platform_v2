@@ -28,8 +28,10 @@ app.get("/info", (req, res) => {
     res.json({msg: "Digital Platform"});
 });
 
-app.listen(8000, () => {
-    console.log("Digital Platform started at 8000....");
+const PORT = process.env.PORT || 8000;
+
+app.listen(PORT, () => {
+  console.log(`🚀 Digital Platform started at port ${PORT}....`);
 });
 
 const gracefulShutdown = async () => {
